@@ -1,0 +1,35 @@
+Feedback from Alexander Voss at 23/04/2014 00:15:
+Functionality and Implementation Quality
+----------------------------------------
+
+I am really impressed by what you have managed to achieve. The system has a wide range of features and is easy to use.
+
+There are a couple of niggles from the user point of view:
+
+- stars sometimes disappear when reloading the page but I am not sure I can figure out exactly when.
+
+- When replying the message does not appear - it shows only after a refresh.
+
+- I cannot seem to upload my own picture.
+
+- A refresh button or auto-refresh would be quite handy generally.
+
+Looking at the code:
+
+- In craigServer.js you create a module for the craigServer but do not place all the variables and function into it - why? This is done better in the client code.
+
+- You are opening a new connection to the database each time a request comes This is somewhat inefficient - use the connection pool created and stored in the db variable in the craicServer closure.
+
+- There are some improvements that could be made to the API. For example, you have a URL /addReply/:messageID - this countains a verb, a sure sign that you are not following the RESTful approach. Instead, model this as POST /messages/:id/replies. The same applies all the other URLs that contain verbs.
+
+- Why are you using an array as the data structure returned by the server instead of an object? Also, why the need to retrieve all the information in one go?
+
+The code is very readable and well structured.
+
+Report
+------
+I found the discussion about the modeling of friendship relationships intriguing. It should be possible to model them without a linking collection but this would entail keeping a list of friends and a list of followers for each account. There are certainly disadvantages to this approach but the ease with which all the information about a given account could be retrieved is desirable. One thing I do wonder about is the performance implications of each approach - I can see it going either way under different scenarios.
+
+Overall
+-------
+Again, I am really impressed by the functionality you have managed to implement. Very well done.

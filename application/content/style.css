@@ -1,0 +1,370 @@
+body{
+	height:100%;
+	margin:0;
+	background-image:url('/background/paper.png'); /*Pattern from subtlepattern.com*/
+	font-family: Helvetica;
+}
+
+#header{
+	background-color: #000000;
+	color: #ffffff;
+	position: relative;
+	overflow: auto;
+}
+
+#headerTitle{
+	font-size: 2em;
+	font-weight:bold;
+	margin-left: 0.5em;
+}
+
+#designSelectSpan{
+	font-size:0.8em;
+}
+
+#designSelect{
+	margin-right: 3em;
+	font-size: 0.8em;
+	background-color: #000000;
+	color: #ffffff;
+}
+
+#loginRegisterArea, #logoutArea{
+	float:right;
+	margin-top: 0.5em;
+	margin-right: 0.5em;
+}
+
+#loginFields, #registerFields{
+	float: right;
+	margin-bottom: 0.5em;
+}
+
+.button{
+	background-color: #000000;
+	color: #ffffff;
+	border: thin solid white;
+}
+
+.button:hover{
+	background-color: #404040;
+}
+
+.button:active{
+	background-color: #707070;
+}
+
+#displayUsername{
+	font-weight: bold;
+}
+
+#loggedOutInfo{
+	font-weight: bold;
+	font-size: 2.5em;
+	text-align: center;
+}
+
+#currentUser{
+	width: 20%;
+	margin-top: 1em;
+	margin-left:1em;
+	background-color: #f8f8f8;
+	border: thin solid black;
+	border-radius: 0.5em;
+	display:inline-block;
+	vertical-align:top;
+	position:absolute;
+	left: 1em;
+	text-align: center;
+	padding-bottom: 0.5em;
+}
+
+#currentUserPicture{
+	height: 6em;
+	width: 8em;
+	margin-top: 0.5em;
+}
+
+#currentUserName{
+	margin:0;
+	font-weight:bold;
+	font-size:1.25em;
+}
+
+#currentUserUsername{
+	margin:0;
+	color: #404040;
+	border-bottom: thin solid black;
+}
+
+#currentUserStats{
+	width:100%;
+	border-bottom: thin solid black;
+}
+
+#composeCraic{
+	width:90%;
+	outline: none;
+	padding: 3px 0px 3px 3px;
+	margin: 5px 1px 3px 0px;
+	border: 1px solid #DDDDDD;
+}
+
+#composeCraic:focus{
+	box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+	padding: 3px 0px 3px 3px;
+	margin: 5px 1px 3px 0px;
+	border: 1px solid rgba(81, 203, 238, 1);
+}
+
+#submitCraic{
+	text-align:left;
+}
+
+#uploadForm{
+	border-top: thin solid black;
+	padding-top: .5em;
+	margin-top: .5em;
+}
+
+#mainDiv{
+	width: 40%;
+	margin-left: 30%; /*=(100%-40%)/2 */
+	display:inline-block;
+}
+
+#userDetails{
+	margin-top: 1em;
+	margin-bottom:2em;
+	background-color: #f8f8f8;
+	border: thin solid black;
+	border-radius: 0.5em;
+	text-align: center;
+	padding-bottom: 0.5em;
+	overflow:auto;
+}
+
+#userDetailsPicture{
+	height:10em;
+	width:12em;
+	margin-top: 0.5em;
+}
+
+#userDetailsName{
+	margin:0;
+	font-weight:bold;
+	font-size:2em;
+}
+
+#userDetailsUsername{
+	margin:0;
+	color: #404040;
+}
+
+#userDetailsInfo{
+	
+}
+
+#followUser{
+	float:left;
+	margin-left:0.5em;
+	font-size:2em;
+}
+
+#followUser:hover{
+	color: green;
+	cursor:pointer;
+}
+
+#unfollowUser{
+float:left;
+	margin-left:0.5em;
+	font-size:2em;
+}
+
+#unfollowUser:hover{
+	color:red;
+	cursor:pointer;
+}
+
+#viewedUserStats{
+	float:right;
+	margin-right:0.5em;
+}
+
+#messages{
+	background-color: #787878;
+	border: thin solid black;
+	border-radius: 0.5em;
+	padding:0 0 0.5em 0;
+	margin: 1.5em 0;
+}
+
+.message{
+	margin: 0;
+	padding: 0.2em 0.5em;
+	background-color: #ffffff;
+	border-bottom: thin solid orange;
+}
+
+.message:hover, .message:hover .messageAuthor, .message:hover .messageDate{
+	background-color: #404040;
+	color: white ;
+}
+
+.message:hover .replyDisplay{
+	background-color: orange;
+	color: black;
+}
+
+.messageAuthor, .messageDate{
+	font-size: 0.8em;
+	border-bottom: thin solid #707070;
+	margin-bottom:0.1em;
+	color: #707070;
+}
+
+.messageAuthor{
+	font-weight:bold;
+}
+
+.messageAuthor:hover{
+	color:orange !important;
+}
+
+.iconsDiv{
+	float: right;
+}
+
+.spreadIcon{
+	float:right;
+	font-size: 2em;
+}
+
+.spreadIcon:hover{
+	cursor:pointer;
+	color:orange;
+}
+
+.favouriteIcon{
+	float:right;
+	font-size: 2em;
+}
+
+.favouriteIcon:hover:before{
+	content: "\2605";
+	position:absolute;
+	cursor: pointer;
+	color:orange;
+}
+
+.favouriteIconActive:before{
+	content: "\2605";
+	position: absolute;
+	color:orange;
+}
+
+.replyIcon{
+	float:right;
+	font-size: 2em;
+}
+
+.replyIcon:hover{
+	color:orange;
+	cursor:pointer;
+}
+
+.messageText{
+	margin:0.5em 0 0.25em 0;
+	width:80%;
+}
+
+.replyTextarea{
+	width:95%;
+}
+
+.replyDisplay{
+	margin-left: 1em;
+	margin-bottom: 0.5em;
+	background-color: #e0e0e0;
+}
+
+#usersOverview{
+	width:20%;
+	margin-top: 1em;
+	margin-right:1em;
+	background-color: #787878;
+	border: thin solid black;
+	border-radius: 0.5em;
+	display:inline-block;
+	vertical-align:top;
+	position:absolute;
+	right: 1em;
+}
+
+#usersOverviewList{
+	margin:0;
+	list-style:none;
+	padding:0 0 0.5em 0;
+}
+
+#searchUsersSpan{
+	float:right;
+}
+
+#searchUsersInput{
+	vertical-align: middle;
+}
+
+.otherUser{
+	font-weight:bold;
+	height:2em;
+	width:90%;
+	background-color: #ffffff;
+	padding: 5%;
+	border-bottom: thin solid orange;
+	margin:0 auto;
+}
+
+.otherUser:hover{
+	background-color: #404040;
+	color: white;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.helper{
+	display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.smallProfilePic{
+	max-height: 3em;
+	max-width: 3em;
+	float: left;
+	vertical-align:middle;
+	margin-right: 2em;
+}
+
+.smallProfilePicPlaceholder{
+	max-height: 36px;
+	max-width: 3em;
+	float: left;
+	vertical-align:middle;
+	margin-right: 2em;
+}
+
+.divHeader{
+	margin:0;
+	background-color: #000000;
+	color: #ffffff;
+	border-top-left-radius: 0.25em;
+	border-top-right-radius: 0.25em;
+}
+
+
+
+.ui-tooltip{
+	font-size: 0.75em;
+}

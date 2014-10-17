@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>CRAIC</title>
+	
+	<!-- Load the jQuery library. -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	
+	<!-- Load the jQuery UI library. -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+	
+	<!-- Load the client-side controller JS file.-->
+	<script type="text/javascript"
+					src="craicClient.js"></script>
+
+	<!-- Load the jQuery UI Mint-Choc theme CSS file. -->
+	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/mint-choc/jquery-ui.min.css">
+	
+	<!-- Load the CSS file. -->
+	<link type="text/css" rel="stylesheet" href="style.css">
+	
+	<!-- Load favicon -->
+	<link rel="icon" type="image/png" href="fav.png">
+				
+</head>
+
+<body>
+
+
+	<div id="header">
+	
+		<span id="headerTitle">Craic</span>
+		
+		<div id="loginRegisterArea">
+			<div id="loginFields">
+				Username: <input type="text" name="username" id="headerFormUsername">		
+				Password: <input type="password" name="password" id="headerFormPassword">				
+				<button type="button" id="loginButton" class="button">Login</button>
+				<button type="button" id="createAccountButton" class="button">Create account</button>
+			</div>
+			
+			</br>
+			
+			<div id="registerFields">
+				<span class="hidden" hidden>First Name: <input type="text" name="fsname" id="headerFormFirstname"></span>
+				<span class="hidden" hidden>Last Name: <input type="text" name="lastname" id="headerFormLastname"></span>
+				<span class="hidden" hidden>Description: <input type="text" name="details" id="headerFormDetails"></span>
+				<button type="button" id="registerButton" class="button hidden"hidden>Register</button>
+			</div>
+		</div>
+
+		<div id="logoutArea" hidden>
+			<span id="designSelectSpan">Select background:
+				<select id="designSelect"> <!--Patterns from subtlepatterns.com-->
+					<option value="paper" selected>Paper</option>
+					<option value="stardust">Stardust</option>
+					<option value="food">Food</option>
+					<option value="tweed">Tweed</option>
+					<option value="photography">Photography</option>
+					<option value="photoshop">Photoshop</option>
+					<option value="giftly">Giftly</option>
+					<option value="old_map">Old Map</option>
+				</select>
+			</span>
+			<span>Logged in as <span id="displayUsername"></span></span>
+			<button type="button" id="logoutButton" class="button">Logout</button>
+		</div>
+	</div>
+		
+	
+	<div id="mainLoggedOut">
+		<p id="loggedOutInfo">Please log in or create a new account first</p>
+	</div>
+	
+	<div id="mainLoggedIn" hidden>
+		
+		<div id="currentUser">
+			<h2 class="divHeader">You</h2>
+			<img src="profilePlaceholder.png" alt="User Profile Picture" id="currentUserPicture">
+			<p id="currentUserName"></p>
+			<p id="currentUserUsername"></p>
+			
+			
+			<table id="currentUserStats">
+				<tr>
+					<th id="numberCraicsHeading">Craics</th>
+					<th id="numberFollowersHeading">Followers</th>
+					<th id="numberFollowingHeading">Friends</th>
+				</tr>
+				<tr>
+					<td id="numberCraics"></td>
+					<td id="numberFollowers"></td>
+					<td id="numberFollowing"></td>
+				</tr>
+			</table>
+			
+			<div id="newCraic">
+				<textarea id="composeCraic" placeholder="Engage in some more craic..." maxlength=200></textarea>
+				<input type="submit" id="submitCraic" value="Submit message" class="button" ></input>
+				<form id="uploadForm" enctype="multipart/form-data" action="/uploadFile" method="post">
+					<input name="file" type="file" id="picFile" />
+					<input type="submit" value = "Upload profile picture" id="picFileSubmit" class="button" />
+					<span>.jpg files only</span>
+				</form>
+				
+			</div>
+			
+		</div>
+		
+		
+		<div id="mainDiv">
+			<div id="userDetails">
+				<img src="profilePlaceholder.png" alt="User Profile Picture" id="userDetailsPicture">
+				<p id="userDetailsName"></p>
+				<p id="userDetailsUsername"></p>
+				<p id="userDetailsInfo"></p>
+				<div id="userFollowAndInfos">
+					<span id="followUser" title="Add to friends">✚</span>
+					<span id="unfollowUser" title="Remove from friends">✖</span>
+					<table id="viewedUserStats">
+						<tr>
+							<th>Craics</th>
+							<th>Followers</th>
+							<th>Friends</th>
+						</tr>
+						<tr>
+							<td id="numberCraicsViewedUser"></td>
+							<td id="numberFollowersViewedUser"></td>
+							<td id="numberFollowingViewedUser"></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		
+			<div id="messages">
+				<h2 class="divHeader">Messages</h2>
+			</div>
+		</div>
+		
+		<div id="usersOverview">
+			<h2 class="divHeader">Craic users
+				<span id="searchUsersSpan"><input type="text" placeholder="Search..." id="searchUsersInput" size=10></input></span>
+			</h2>
+			<ul id="usersOverviewList">
+			</ul>
+		</div>
+		
+	</div>
+	
+
+</body>
+
+</html> 
